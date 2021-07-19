@@ -1,0 +1,32 @@
+.projects-page {
+  margin: 3rem;
+  padding: 0;
+    
+  .active-pink input[type=search] {
+    border-bottom: 1px solid #f48fb1;
+    box-shadow: 0 1px 0 0 #f48fb1;
+  }
+
+  .search-bar {
+    margin: 1.5rem 0;
+  }
+
+  .project-container {
+      margin-left: 0;
+
+      .project {
+        margin-right: 1.5rem;
+        min-width: 20rem;
+        padding: 0;
+
+        .project-name {
+          color: #008080;
+          margin-bottom: 1.5rem;
+        }
+
+        .commits-header {
+          font-size: 1.2rem;
+        }
+      }
+  }
+}
