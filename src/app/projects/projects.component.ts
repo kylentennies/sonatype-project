@@ -23,7 +23,7 @@ export class ProjectsComponent implements OnInit {
     this.getProjects();
   }
 
-  async getProjects() {
+  getProjects() {
     this.githubService.getProjects(this.userName).subscribe((data) => {
       this.projects = data;
 
@@ -34,7 +34,7 @@ export class ProjectsComponent implements OnInit {
     });
   }
 
-  async getCommits(userName: string, repoName: string) {
+  getCommits(userName: string, repoName: string) {
     this.githubService.getCommits(userName, repoName).subscribe((data) => {
       this.commits = data;
       console.log(repoName, ":", this.commits)
