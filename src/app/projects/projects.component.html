@@ -3,21 +3,23 @@
 
     <form>
         <div class="md-form active-pink active-pink-2 mb-3 search-bar">
-          <input class="form-control" type="search" placeholder="Search" mdbInput>
+          <input class="form-control" type="search" placeholder="Search">
         </div>
     </form>
 
     <div class="row project-container">
-        <div *ngFor="let project of projects" class="col-md-4 col-lg-3 project shadow p-3 mb-5 bg-white rounded">
-            <h3 class="project-name">{{ project.name}}</h3>
-            <p>content content content</p>
-            <p>content content content</p>
-        </div>        
+        <div *ngFor="let project of projects; let indexOfelement=index;" class="col-md-4 col-lg-3 project shadow p-3 mb-5 bg-white rounded">
+            <h3 class="project-name">{{ project.name }}</h3>
+            <h3 class="commits-header">Recent Commits:</h3>
+            <div *ngFor="let commit of commits; let i = index">
+                <div *ngIf="i < 5">
+                    <p *ngIf="commit.commit.author.name">{{ i + 1 }}.</p>
+                    <p>Author: {{ commit.commit.author.name }}</p>
+                    <p>Commit message: {{ commit.commit.message }}</p>
+                    <p>Date: {{ commit.commit.author.date }}</p>
+                    <hr/>
+                </div>
+            </div>
+        </div>
     </div>
-
-    <!-- <h3>Commits for astyanax</h3>
-    <div *ngFor="let commit of commits">
-        <p>{{ commit.author.login }}</p>
-    </div> -->
-    
 </div>
